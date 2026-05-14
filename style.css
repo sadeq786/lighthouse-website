@@ -1,0 +1,65 @@
+/* --- Global & Typography --- */
+:root {
+    --bg: #fdfcf9;
+    --text: #111;
+    --muted: #666;
+    --border: #e0ddd5;
+    --serif: "Times New Roman", Times, serif;
+    --sans: "Inter", -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.5; }
+
+/* --- Navigation --- */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%; max-width: 1400px; margin: 0 auto;
+}
+.nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-size: 0.9rem; font-weight: 500; }
+
+/* --- Hero --- */
+.hero { padding: 80px 5%; max-width: 1000px; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; margin-bottom: 2rem; }
+.hero p { font-size: 1.25rem; color: var(--muted); max-width: 700px; }
+
+/* --- Logo Bar (The Fix) --- */
+.as-seen-in { padding: 60px 5%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.logo-grid { 
+    display: grid; grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; align-items: center; max-width: 1100px; margin: 0 auto; 
+}
+@media (min-width: 768px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
+.logo-item { height: 50px; display: flex; align-items: center; justify-content: center; }
+.logo-item img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); opacity: 0.7; }
+.boost img { transform: scale(1.6); }
+
+/* --- Work Grid --- */
+.work-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+.work-grid { 
+    display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; 
+}
+@media (min-width: 768px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.card { 
+    border: 1px solid var(--border); padding: 30px; 
+    display: flex; flex-direction: column; justify-content: space-between;
+    text-decoration: none; color: inherit; transition: background 0.3s;
+}
+.card:hover { background: #f4f2eb; }
+.card-meta { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; color: var(--muted); }
+.card h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 1.5rem; }
+.card-link { font-size: 1.2rem; align-self: flex-end; }
+
+/* --- Team Section --- */
+.team-section { padding: 80px 5%; background: #f4f2eb; }
+.team-grid { display: grid; grid-template-columns: 1fr; gap: 60px; max-width: 1000px; margin: 40px auto 0; }
+@media (min-width: 768px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+.member h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.member .title { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+
+/* --- Contact Form --- */
+.contact-section { padding: 80px 5%; max-width: 600px; margin: 0 auto; }
+form { display: flex; flex-direction: column; gap: 20px; }
+input, textarea { padding: 15px; border: 1px solid var(--border); background: transparent; font-family: inherit; }
+button { padding: 15px; background: var(--text); color: white; border: none; cursor: pointer; font-weight: 600; }
